@@ -7,9 +7,9 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
+      title: 'Theater-Seat-Booking-System',
       description: 'A full-stack e-commerce solution with React, Node.js, and PostgreSQL. Features include user authentication, payment processing, and admin dashboard.',
-      image: 'https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://collection.cloudinary.com/dh5zke2vg/1219062b706a81b4b524d8e8f9cd677e',
       technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
       category: 'Full Stack',
       github: 'https://github.com',
