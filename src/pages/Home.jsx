@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Download, Github, Linkedin, Mail } from 'lucide-react';
+import porto from '../assets/porto.jpg' // adjust path as needed
+
 
 const Home = () => {
   return (
@@ -12,7 +14,7 @@ const Home = () => {
             <div className="space-y-4">
               <p className="text-blue-400 font-medium text-lg">Hello, I'm</p>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Alex Johnson
+                Isuru Sajan
                 <span className="block gradient-text">Full Stack Developer</span>
               </h1>
               <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
@@ -45,7 +47,7 @@ const Home = () => {
               <p className="text-gray-400">Connect with me:</p>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Isurusajan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 hover:scale-110 transform"
@@ -54,7 +56,7 @@ const Home = () => {
                   <Github size={24} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/isuru-sajan/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 text-gray-400 hover:text-blue-400 transition-colors duration-200 hover:scale-110 transform"
@@ -78,8 +80,8 @@ const Home = () => {
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl animate-float neon-glow">
                 <img
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=800"
-                  alt="Alex Johnson - Full Stack Developer"
+                  src={porto}
+                  alt=" Isuru Sajan- Full Stack Developer"
                   className="w-full h-full object-cover"
                 />
               </div>
