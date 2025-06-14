@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,13 +22,24 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
+
+    const serviceID = 'service_spxc79p';     // Replace with actual EmailJS service ID
+    const templateID = 'template_ybfldqr';   // Replace with actual EmailJS template ID
+    const publicKey = 'wNG5OgkFFIIdY49_y';     // Replace with actual EmailJS public key
+
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      subject: formData.subject,
+      message: formData.message,
+    };
+
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      await emailjs.send(serviceID, templateID, templateParams, publicKey);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error('Email sending error:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -39,19 +51,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'alex.johnson@email.com',
-      link: 'mailto:alex.johnson@email.com',
+      value: 'isurusajan9@gmail.com',
+      link: 'mailto:isurusajan9@gmail.com',
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567',
+      value: '+94 0754796701',
+      link: 'tel:+94754796701',
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Sri Lanka, Galle',
       link: null,
     },
   ];
@@ -70,7 +82,7 @@ const Contact = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Contact Information */}
+          {/* Contact Info */}
           <div className="space-y-8">
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-white">Let's Talk</h2>
@@ -81,13 +93,12 @@ const Contact = () => {
               </p>
             </div>
 
-            {/* Contact Details */}
             <div className="space-y-6">
               {contactInfo.map((info, index) => {
                 const IconComponent = info.icon;
                 const content = (
                   <div className="flex items-center space-x-4 p-4 glass-effect rounded-lg hover:bg-gray-700/30 transition-all duration-200">
-                    <div className="flex-shrink-0 w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
                       <IconComponent size={24} className="text-blue-400" />
                     </div>
                     <div>
@@ -98,12 +109,7 @@ const Contact = () => {
                 );
 
                 return info.link ? (
-                  <a
-                    key={index}
-                    href={info.link}
-                    className="block hover:scale-105 transition-transform duration-200"
-                    aria-label={`${info.label}: ${info.value}`}
-                  >
+                  <a key={index} href={info.link} className="block hover:scale-105 transition-transform duration-200">
                     {content}
                   </a>
                 ) : (
@@ -114,7 +120,6 @@ const Contact = () => {
               })}
             </div>
 
-            {/* Additional Info */}
             <div className="bg-gradient-to-r from-blue-500/10 to-teal-500/10 p-6 rounded-xl glass-effect">
               <h3 className="text-xl font-bold text-white mb-3">Quick Response</h3>
               <p className="text-gray-300 leading-relaxed">
@@ -139,8 +144,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    aria-required="true"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white"
                     placeholder="Your full name"
                   />
                 </div>
@@ -155,8 +159,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    aria-required="true"
-                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+                    className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -173,8 +176,7 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  aria-required="true"
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white"
                   placeholder="What's this about?"
                 />
               </div>
@@ -189,9 +191,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  aria-required="true"
                   rows={6}
-                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 resize-vertical text-white placeholder-gray-400"
+                  className="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white"
                   placeholder="Tell me about your project or how I can help..."
                 />
               </div>
@@ -200,8 +201,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white font-medium py-4 px-6 rounded-lg hover:bg-blue-700 transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center space-x-2"
-                aria-label="Send message"
+                className="w-full bg-blue-600 text-white font-medium py-4 px-6 rounded-lg hover:bg-blue-700 flex items-center justify-center space-x-2"
               >
                 {isSubmitting ? (
                   <>
@@ -216,18 +216,17 @@ const Contact = () => {
                 )}
               </button>
 
-              {/* Status Messages */}
+              {/* Status */}
               {submitStatus === 'success' && (
-                <div className="flex items-center space-x-2 text-green-400 bg-green-500/10 p-4 rounded-lg border border-green-500/20">
+                <div className="flex items-center space-x-2 text-green-400 bg-green-500/10 p-4 rounded-lg">
                   <CheckCircle size={20} />
                   <span>Message sent successfully! I'll get back to you soon.</span>
                 </div>
               )}
-
               {submitStatus === 'error' && (
-                <div className="flex items-center space-x-2 text-red-400 bg-red-500/10 p-4 rounded-lg border border-red-500/20">
+                <div className="flex items-center space-x-2 text-red-400 bg-red-500/10 p-4 rounded-lg">
                   <AlertCircle size={20} />
-                  <span>Something went wrong. Please try again or contact me directly.</span>
+                  <span>Something went wrong. Please try again later.</span>
                 </div>
               )}
             </form>
