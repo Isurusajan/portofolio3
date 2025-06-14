@@ -29,27 +29,6 @@ const About = () => {
     },
   ];
 
-  const experiences = [
-    {
-      role: 'Senior Full Stack Developer',
-      company: 'TechCorp Solutions',
-      period: '2022 - Present',
-      description: 'Lead development of scalable web applications serving 100k+ users. Mentor junior developers and implement best practices.',
-    },
-    {
-      role: 'Frontend Developer',
-      company: 'StartupXYZ',
-      period: '2021 - 2022',
-      description: 'Built responsive user interfaces and improved application performance by 40%. Collaborated with UX designers and backend teams.',
-    },
-    {
-      role: 'Junior Developer',
-      company: 'WebAgency Pro',
-      period: '2020 - 2021',
-      description: 'Developed custom websites and learned modern development practices. Gained experience in client communication and project management.',
-    },
-  ];
-
   return (
     <section className="section-padding">
       <div className="container-width">
@@ -59,7 +38,7 @@ const About = () => {
             About <span className="gradient-text">Me</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Passionate developer with a love for creating innovative solutions and beautiful user experiences
+            Dedicated and curious software engineering undergraduate with a passion for building impactful digital solutions.
           </p>
         </div>
 
@@ -73,21 +52,13 @@ const About = () => {
               </h2>
               <div className="prose prose-lg text-gray-300 space-y-4">
                 <p>
-                  I'm a passionate full-stack developer with over 3 years of experience creating 
-                  digital solutions that make a real impact. My journey began with a curiosity 
-                  about how websites work, which quickly evolved into a deep passion for coding 
-                  and problem-solving.
+                  I’m currently pursuing my Bachelor's degree at the University of Moratuwa, specializing in Information Technology. Over the past few years, I’ve developed strong skills in both frontend and backend development through coursework, projects, and self-learning.
                 </p>
                 <p>
-                  I hold a Bachelor's degree in Computer Science from Tech University, where I 
-                  developed a strong foundation in algorithms, data structures, and software 
-                  engineering principles. I'm constantly learning new technologies and staying 
-                  current with industry trends.
+                  My interest in tech began with a fascination for how digital products are built. Since then, I’ve explored various areas of development — from web and mobile applications to databases and cloud technologies.
                 </p>
                 <p>
-                  When I'm not coding, you'll find me contributing to open-source projects, 
-                  mentoring aspiring developers, or exploring the latest in tech innovations. 
-                  I believe in writing clean, maintainable code and creating user-centered designs.
+                  As I prepare for my internship, I’m eager to apply my technical knowledge in a real-world environment and gain hands-on experience working in a collaborative team.
                 </p>
               </div>
             </div>
@@ -99,10 +70,7 @@ const About = () => {
                 Career Aspirations
               </h3>
               <p className="text-gray-300 leading-relaxed">
-                My goal is to become a technical leader who can bridge the gap between complex 
-                technical solutions and real-world business needs. I aspire to lead teams that 
-                build products that positively impact millions of users while fostering a 
-                culture of continuous learning and innovation.
+                I aim to become a well-rounded full-stack developer who can contribute to building scalable and user-friendly applications. I’m particularly interested in learning from industry experts during my internship and continuing to grow in areas like cloud computing and system design.
               </p>
             </div>
           </div>
@@ -144,33 +112,7 @@ const About = () => {
         </div>
 
         {/* Experience Timeline */}
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-white text-center mb-12">
-            Professional Experience
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            {experiences.map((exp, index) => (
-              <div key={index} className="relative">
-                {index !== experiences.length - 1 && (
-                  <div className="absolute left-4 top-16 bottom-0 w-0.5 bg-blue-500/30"></div>
-                )}
-                <div className="flex items-start space-x-6 pb-12">
-                  <div className="flex-shrink-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30">
-                    <div className="w-3 h-3 bg-white rounded-full"></div>
-                  </div>
-                  <div className="glass-effect p-6 rounded-xl hover:bg-gray-700/30 transition-all duration-300 flex-1 hover:shadow-xl hover:shadow-blue-500/10">
-                    <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
-                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                      <span className="text-blue-400 font-medium">{exp.period}</span>
-                    </div>
-                    <h4 className="text-lg text-gray-300 font-medium mb-3">{exp.company}</h4>
-                    <p className="text-gray-400 leading-relaxed">{exp.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        {/* Removed for now since you're seeking your first internship */}
       </div>
     </section>
   );
