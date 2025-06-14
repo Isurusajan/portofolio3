@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-8 items-center">
           {/* Brand */}
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold mb-2 gradient-text">Alex Johnson</h3>
+            <h3 className="text-2xl font-bold mb-2 gradient-text">Isuru Sajan</h3>
             <p className="text-gray-400">Full Stack Developer</p>
           </div>
 
