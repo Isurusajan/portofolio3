@@ -90,24 +90,26 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {[
-            { number: '50+', label: 'Projects Completed' },
-            { number: '3+', label: 'Years Experience' },
-            { number: '20+', label: 'Happy Clients' },
-            { number: '100%', label: 'Success Rate' },
-          ].map((stat, index) => (
-            <div key={index} className="text-center space-y-2 glass-effect p-6 rounded-xl hover:bg-gray-700/30 transition-all duration-300">
-              <div className="text-3xl md:text-4xl font-bold gradient-text">
-                {stat.number}
-              </div>
-              <div className="text-gray-400 text-sm md:text-base">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
+       {/* Stats Section */}
+<div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+  {[
+    { number: '6+', label: 'Projects Completed' },
+    { number: '1+', label: 'Years in Web Development' },
+    { number: '3+', label: 'Team Projects Collaborated' },
+    { number: 'Open', label: 'Internship Opportunities' }, // Honest and inviting
+  ].map((stat, index) => (
+    <div key={index} className="text-center space-y-2 glass-effect p-6 rounded-xl hover:bg-gray-700/30 transition-all duration-300">
+      <div className="text-3xl md:text-4xl font-bold gradient-text">
+        {stat.number}
+      </div>
+      <div className="text-gray-400 text-sm md:text-base">
+        {stat.label}
+      </div>
+    </div>
+  ))}
+</div>
+
+
       </div>
     </section>
   );

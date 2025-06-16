@@ -30,7 +30,7 @@ image: '/assets/projects/seat booking.png',
     {
       id: 3,
       title: 'Image generator',
-      description: 'AI Image Generation App using the MERN Stack ',
+      description: 'The AI Image Generator is a full-stack web application that allows users to generate high-quality, realistic images from text prompts using artificial intelligence. Built with the MERN stack (MongoDB, Express.js, React.js, and Node.js), the app integrates with the Replicate API to access advanced image generation models. Users can enter a creative prompt, generate a custom image, and view or save the results in a visually clean interface.',
       image: '/assets/projects/image generator.png',
       technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js'],
       category: 'Full Stack',
