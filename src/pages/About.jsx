@@ -52,7 +52,7 @@ const About = () => {
               </h2>
               <div className="prose prose-lg text-gray-300 space-y-4">
                 <p>
-                  I’m currently pursuing my Bachelor's degree at the University of Moratuwa, specializing in Information Technology. Over the past few years, I’ve developed strong skills in both frontend and backend development through coursework, projects, and self-learning.
+                  I’m currently pursuing my Higher National Diploma at Institute of Technology University of Moratuwa, specializing in Information Technology. Over the past few years, I’ve developed strong skills in both frontend and backend development through coursework, projects, and self-learning.
                 </p>
                 <p>
                   My interest in tech began with a fascination for how digital products are built. Since then, I’ve explored various areas of development — from web and mobile applications to databases and cloud technologies.
